@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Genetic Checkers</title>
+        <script src="board.js"></script>
+        <script src="game.js"></script>
+        <script src="team.js"></script>
+        <script src="piece.js"></script>
+    </head>
+
+    <body>
+        <table style="width:100%">
+            <tr style="align:left">
+                <td style="width:1%">
+                    <p id="Generation">Generation: 0</p>
+                    <p id="totalWinLoss">Total Win/Loss/Tie: 0, 0. 0</p>
+                    <p id="generationWinLoss">This Generation Win/Loss: 0, 0</p>
+                    <p id="totalAverage">Overall Average Score: 0</p>
+                    <p id="generationAverage">This Generation Average Score: 0</p>
+                    <h3>Score of Parents:</h3>
+                    <p id="scoreTable">No parents (first generation)
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                    <p id="testXList"></p>
+                    <p id="testX"></p>
+                    <table>
+                        <canvas id="gameCanvas0"></canvas>
+                        <p id="gameText0">Game: 0</p>
+                        <p id="piecesLeftText0">AI: 0, VS: 0</p>
+                        <p id="gameScoreText0">Score: 0</p>
+                    </table>
+
+                    <script type="text/javascript">
+                        var canvas = document.getElementById("gameCanvas0");
+                        var board = new Board(canvas, 8, 8);
+                        var game = new Game();
+
+                        function debug(v, string) {
+
+                            if (v.id === 9 && v.team === 0) {
+                                var i;
+                                board.draw(v.x, v.y);
+                                console.log(string);
+                            }
+                        }
+                        for (var i = 0; i < 100; i++) {
+
+
+                            if((i%10) === 0){
+                                game.start();
+                                console.log("reset: " + game.seed);
+                            }
+                            console.log(i + ": " + random(0,100));
+                        }
+
+
+                    </script>
+                </td>
+
+            </tr>
+        </table>
+    </body>
+
+</html>
+

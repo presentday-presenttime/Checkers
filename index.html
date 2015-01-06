@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Genetic Checkers</title>
+        <script src="board.js"></script>
+        <script src="game.js"></script>
+        <script src="team.js"></script>
+        <script src="piece.js"></script>
+    </head>
+
+    <body>
+        <table style="width:100%">
+            <tr style="align:left">
+                <td style="width:1%">
+                    <p id="Generation">Generation: 0</p>
+                    <p id="totalWinLoss">Total Win/Loss/Tie: 0, 0. 0</p>
+                    <p id="generationWinLoss">This Generation Win/Loss: 0, 0</p>
+                    <p id="totalAverage">Overall Average Score: 0</p>
+                    <p id="generationAverage">This Generation Average Score: 0</p>
+                    <h3>Score of Parents:</h3>
+                    <p id="scoreTable">No parents (first generation)
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                    <p id="testXList"></p>
+                    <p id="testX"></p>
+                    <table>
+                        <canvas id="gameCanvas0"></canvas>
+                        <p id="gameText0">Game: 0</p>
+                        <p id="piecesLeftText0">AI: 0, VS: 0</p>
+                        <p id="gameScoreText0">Score: 0</p>
+                    </table>
+
+                    <script type="text/javascript">
+                        var canvas = document.getElementById("gameCanvas0");
+                        var board = new Board(canvas, 8, 8);
+                        var game = new Game();
+
+                        game.start();
+
+                    </script>
+                </td>
+
+                <td style="width:1%">
+                    <table border="1">
+                        <tr>
+                            <th colspan="2" id="currentPiece">C</th>
+                            <th colspan="2" id="aPiece">a</th>
+                            <th colspan="2" id="bPiece">b</th>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom0">-1.</td>
+                            <td id="curPieceTo0">-1.</td>
+                            <td id="parentAFrom0">-1.</td>
+                            <td id="parentATo0">-1.</td>
+                            <td id="parentBFrom0">-1.</td>
+                            <td id="parentBTo0">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom1">-1.</td>
+                            <td id="curPieceTo1">-1.</td>
+                            <td id="parentAFrom1">-1.</td>
+                            <td id="parentATo1">-1.</td>
+                            <td id="parentBFrom1">-1.</td>
+                            <td id="parentBTo1">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom2">-1.</td>
+                            <td id="curPieceTo2">-1.</td>
+                            <td id="parentAFrom2">-1.</td>
+                            <td id="parentATo2">-1.</td>
+                            <td id="parentBFrom2">-1.</td>
+                            <td id="parentBTo2">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom3">-1.</td>
+                            <td id="curPieceTo3">-1.</td>
+                            <td id="parentAFrom3">-1.</td>
+                            <td id="parentATo3">-1.</td>
+                            <td id="parentBFrom3">-1.</td>
+                            <td id="parentBTo3">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom4">-1.</td>
+                            <td id="curPieceTo4">-1.</td>
+                            <td id="parentAFrom4">-1.</td>
+                            <td id="parentATo4">-1.</td>
+                            <td id="parentBFrom4">-1.</td>
+                            <td id="parentBTo4">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom5">-1.</td>
+                            <td id="curPieceTo5">-1.</td>
+                            <td id="parentAFrom5">-1.</td>
+                            <td id="parentATo5">-1.</td>
+                            <td id="parentBFrom5">-1.</td>
+                            <td id="parentBTo5">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom6">-1.</td>
+                            <td id="curPieceTo6">-1.</td>
+                            <td id="parentAFrom6">-1.</td>
+                            <td id="parentATo6">-1.</td>
+                            <td id="parentBFrom6">-1.</td>
+                            <td id="parentBTo6">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom7">-1.</td>
+                            <td id="curPieceTo7">-1.</td>
+                            <td id="parentAFrom7">-1.</td>
+                            <td id="parentATo7">-1.</td>
+                            <td id="parentBFrom7">-1.</td>
+                            <td id="parentBTo7">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom8">-1.</td>
+                            <td id="curPieceTo8">-1.</td>
+                            <td id="parentAFrom8">-1.</td>
+                            <td id="parentATo8">-1.</td>
+                            <td id="parentBFrom8">-1.</td>
+                            <td id="parentBTo8">-1.</td>
+                        </tr>
+                        <tr>
+                            <td id="curPieceFrom9">-1.</td>
+                            <td id="curPieceTo9">-1.</td>
+                            <td id="parentAFrom9">-1.</td>
+                            <td id="parentATo9">-1.</td>
+                            <td id="parentBFrom9">-1.</td>
+                            <td id="parentBTo9">-1.</td>
+                        </tr>
+
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+    </body>
+
+</html>
+
