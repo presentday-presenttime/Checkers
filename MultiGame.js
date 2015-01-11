@@ -80,12 +80,12 @@ function MultiGame() {
             board = boardList[i];
 
             //set current player
-            game.currentPlayer = Math.floor(Math.random() * 2 + 1);
+            game.currentPlayer = (Math.floor(Math.random() * 2 + 1) === 0) ? game.playerOne : game.playerTwo;
 
-            if (game.playerOne && game.playerTwo) {
-                game.playerOne.resetPieces();
-                game.playerTwo.resetPieces();
-            }
+        if (game.playerOne && game.playerTwo) {
+            game.playerOne.resetPieces();
+            game.playerTwo.resetPieces();
+        }
 
             //draw board
             board.start(game);
@@ -157,14 +157,15 @@ function MultiGame() {
                 } else { //player 0
                     p = game.playerTwo;
                 }
+
                 var tieCheck = p.move();
-                if (tieCheck === undefined) {
+                if (tieCheck === false) {
                     game.tieCount++;
                 }
 
                 game.isDone = game.checkDone();
                 //switch players
-                game.currentPlayer = (game.currentPlayer) ? 0 : 1;
+                game.currentPlayer = (game.currentPlayer === game.playerOne) ? game.playerTwo : game.playerOne;
 
                 //go to next frame
                 allGamesDone = false;
@@ -181,7 +182,7 @@ function MultiGame() {
                     generationLoss++;
                 } else if (game.isDone === 3) {
                     totalTie++;
-                    generationTie++;
+                    // generationTie++;
                 }
 
                 game.playerOne.resetPieces();
@@ -213,6 +214,7 @@ function MultiGame() {
             generationLoss = 0;
 
             currentAverage = 0;
+
             //currentGame = 0;
             savedScores = bestAI;
             bestAI = [];
