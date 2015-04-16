@@ -21,8 +21,8 @@ function Game() {
     var currentAverage = 0;
     var savedScores = [];
     var bestAI = [];
-    var population = 100; //increasing the population (10->100) hopefully to make quick progress via RNG
-    var leaders = 10;
+    var population = 10;
+    var leaders = 3;
 
     this.savedSeed = Math.random() * 10;
     this.seed = this.savedSeed;
@@ -264,14 +264,24 @@ function Game() {
         //if the game is still going
         if (!game.isDone) {
 
-            var p;
-            if(game.currentPlayer){
-                p = game.playerOne; //have the current player move
-            }else {
-                p = game.playerTwo;
+            var p = game.currentPlayer; //have the current player move
+            if(p === undefined){
+                p = game.playerOne;
+            }
+            // if (game.currentPlayer) { //player 1
+            //     p = game.playerOne;
+            // } else { //player 0
+            //     p = game.playerTwo;
+            // }
+
+            var tieCheck;
+            if (p.genetic === true) {
+                tieCheck = p.move();
+            } else {
+                tieCheck = p.moveRandom();
             }
 
-            var tieCheck = p.move();
+            //if we aren't unable to move n times, just call it a tie.
             if (tieCheck === false) {
                 game.tieCount++;
             }
@@ -286,18 +296,14 @@ function Game() {
                     window.requestAnimationFrame(game.frame);
                 }, 1000 / game.fps);
         } else {
-            this.currentGame++;
             //game has ended
             //game.isDone: 3 = tie, 1 = win, 2 = loss
             if (game.isDone === 1) {
                 totalWin++;
-                generationWin++;
             } else if (game.isDone === 2) {
                 totalLoss++;
-                generationLoss++;
             } else if (game.isDone === 3) {
                 totalTie++;
-                // generationTie++;
             }
 
             var isWinner = (game.isDone === 1) ? true : false;
