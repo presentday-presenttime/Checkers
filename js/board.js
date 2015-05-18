@@ -3,8 +3,8 @@ function Board(canvas, rows, cols) {
     this.cols = cols;
 
     //Initilize variables
-    var PieceWidth = 10;
-    var PieceHeight = 10;
+    var PieceWidth = 11;
+    var PieceHeight = 11;
     var BoardWidth = 1 + (cols * PieceWidth);
     var BoardHeight = 1 + (rows * PieceHeight);
     canvas.width = BoardWidth;
