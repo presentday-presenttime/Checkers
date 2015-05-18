@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Genetic Checkers</title>
+        <script src="board.js"></script>
+        <script src="game.js"></script>
+        <script src="team.js"></script>
+        <script src="piece.js"></script>
+        <script src="multiGame.js"></script>
+    </head>
+
+    <body>
+        <p id="Generation">Generation: 0</p>
+        <p id="totalWinLoss">Total Win/Loss/Tie: 0, 0, 0</p>
+        <p id="generationWinLoss">This Generation Win/Loss: 0, 0</p>
+        <p id="totalAverage">Overall Average Score: 0</p>
+        <p id="generationAverage">This Generation Average Score: 0</p>
+        <h3>Score of Parents:</h3>
+        <p id="scoreTable">No parents (first generation)
+            <br>
+            <br>
+            <br>
+        </p>
+        <p id="testXList"></p>
+        <p id="testX"></p>
+        <table>
+            <tr>
+                <td width="100">
+                    <canvas id="gameCanvas0"></canvas>
+                    <p id="gameText0">Game: 0</p>
+                    <p id="piecesLeftText0">AI: 0, VS: 0</p>
+                    <p id="gameScoreText0">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas1"></canvas>
+                    <p id="gameText1">Game: 0</p>
+                    <p id="piecesLeftText1">AI: 0, VS: 0</p>
+                    <p id="gameScoreText1">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas2"></canvas>
+                    <p id="gameText2">Game: 0</p>
+                    <p id="piecesLeftText2">AI: 0, VS: 0</p>
+                    <p id="gameScoreText2">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas3"></canvas>
+                    <p id="gameText3">Game: 0</p>
+                    <p id="piecesLeftText3">AI: 0, VS: 0</p>
+                    <p id="gameScoreText3">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas4"></canvas>
+                    <p id="gameText4">Game: 0</p>
+                    <p id="piecesLeftText4">AI: 0, VS: 0</p>
+                    <p id="gameScoreText4">Score: 0</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="100">
+                    <canvas id="gameCanvas5"></canvas>
+                    <p id="gameText5">Game: 0</p>
+                    <p id="piecesLeftText5">AI: 0, VS: 0</p>
+                    <p id="gameScoreText5">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas6"></canvas>
+                    <p id="gameText6">Game: 0</p>
+                    <p id="piecesLeftText6">AI: 0, VS: 0</p>
+                    <p id="gameScoreText6">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas7"></canvas>
+                    <p id="gameText7">Game: 0</p>
+                    <p id="piecesLeftText7">AI: 0, VS: 0</p>
+                    <p id="gameScoreText7">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas8"></canvas>
+                    <p id="gameText8">Game: 0</p>
+                    <p id="piecesLeftText8">AI: 0, VS: 0</p>
+                    <p id="gameScoreText8">Score: 0</p>
+                </td>
+                <td width="100">
+                    <canvas id="gameCanvas9"></canvas>
+                    <p id="gameText9">Game: 0</p>
+                    <p id="piecesLeftText9">AI: 0, VS: 0</p>
+                    <p id="gameScoreText9">Score: 0</p>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+        var canvasList = [];
+        var boardList = [];
+        var gameList = [];
+        var game, board;
+
+        for (var i = 0; i < 10; i++) {
+            canvasList[i] = document.getElementById("gameCanvas" + i);
+            boardList[i] = new Board(canvasList[i], 8, 8);
+            gameList[i] = new Game();
+        }
+
+        var multiGame = new MultiGame();
+
+        multiGame.start();
+        </script>
+    </body>
